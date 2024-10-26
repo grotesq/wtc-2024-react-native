@@ -1,16 +1,17 @@
 import { ListItemType } from "@/types";
+import { Link } from "expo-router";
 import { FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const LIST: ListItemType[] = [
     {
         key: '1955',
         name: '1955 버거',
-        vid: 'burger-1955'
+        vid: 'gzFEg2z5Sso'
     },
     {
         key: 'big-mc',
         name: '빅맥',
-        vid: 'big-mc',
+        vid: 'm7G6fDMvUY8',
     },
 ]
 
@@ -34,7 +35,9 @@ export default function Page() {
 
 function Item({ item }: { item: ListItemType } ) {
     return <View>
-        <Text>{item.name}</Text>
+        <Link href={`/details/${item.vid}`}>
+            <Text>{item.name}</Text>
+        </Link>
     </View>
 }
 
